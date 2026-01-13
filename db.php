@@ -10,7 +10,7 @@ try {
     // Création de la connexion PDO
     // (new pod) : crée connexion à BDD (mysql:) : type de base (host=localhost) : serveur local (dbnale=auth_system) : nom de la BDD 
     // (charset) : encodage ('root') : nom d'utilisateur MySQL ("") mot de passe vide
-    $pdo = new PDO('mysql:host=localhost;dbname=auth_system;charset=utf8mb4', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=tp_auth;charset=utf8mb4', 'root', '');
 
     // Mode de Gestion des erreurs
     // indique à PDO de lancer une exception si une erreur SQL survient (important pour le débogage et la sécurité)
