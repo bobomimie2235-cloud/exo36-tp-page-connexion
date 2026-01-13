@@ -1,3 +1,5 @@
+-- Script de création de la Base De Donnée sous PHPMyAdmin
+
 -- Création de la base de données
 CREATE DATABASE IF NOT EXISTS tp_auth
 CHARACTER SET utf8mb4
