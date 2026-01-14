@@ -1,6 +1,11 @@
 <!-- Ajouter une page "Mot de passe oublié" (simulée) -->
 
 <?php
+
+// Inclusion de mon Header
+$pageTitle = 'Page de connexion';
+require 'header.php';
+
 // On peut récupérer un message de confirmation si nécessaire
 $message = '';
 
@@ -59,3 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<!-- Inclusion du Footer -->
+<?php require 'footer.php'; ?>

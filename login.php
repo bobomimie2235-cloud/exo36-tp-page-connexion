@@ -3,8 +3,16 @@
 
 <?php
 
+// démarrage de la session PHP (permet de stocker des données côté serveur)
+    session_start();
+
 // Inclusion de la connexion PDO
 require_once("db.php");
+
+
+// Inclusion de mon Header
+$pageTitle = 'Page de connexion';
+require 'header.php';
 
 // Verification de la methode POST
 if($_SERVER["REQUEST_METHOD"] === 'POST') {
@@ -18,12 +26,10 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $stmt->execute([':email' => $email]);
     // Récupération de l'utilisateur
     $user = $stmt->fetch();
-}
 
 // Condition if pour vérifier que l'utilisateur existe dans la BDD et le password
 if ($user && password_verify($password, $user['password'])) {
-    // démarrage de la session PHP (permet de stocker des données côté serveur)
-    session_start();
+    
     // Stockage des infos utilisateurs en session
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['email'] = $user['email'];
@@ -34,7 +40,7 @@ if ($user && password_verify($password, $user['password'])) {
 } else {
     echo "Email ou mot de passe incorrect";
 }
-
+}
 ?>
 
 
@@ -84,3 +90,6 @@ if ($user && password_verify($password, $user['password'])) {
 
 </body>
 </html>
+
+<!-- Inclusion du Footer -->
+<?php require 'footer.php'; ?>

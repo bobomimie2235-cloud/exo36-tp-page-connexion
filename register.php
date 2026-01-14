@@ -1,6 +1,10 @@
 <!-- Inscription (INSERT + password_hash) -->
 <?php
 
+// Inclusion de mon Header
+$pageTitle = 'Page de connexion';
+require 'header.php';
+
 // Inclusion de la connexion à la base
 require_once 'db.php';
 
@@ -87,3 +91,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
+
+<!-- Inclusion du Footer -->
+<?php require 'footer.php'; ?>
