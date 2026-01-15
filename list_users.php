@@ -33,6 +33,18 @@ $users = $stmt->fetchAll();
 <body>
     <h2>Liste des utilisateurs</h2>
 
+    <!-- Messages concernant la suppression d'un utilisateur -->
+    <?php if (isset($_GET['msg'])): ?>
+    <?php if ($_GET['msg'] === 'deleted'): ?>
+        <p style="color:green;">Utilisateur supprimé avec succès.</p>
+    <?php elseif ($_GET['msg'] === 'self_delete_forbidden'): ?>
+        <p style="color:red;">Vous ne pouvez pas vous supprimer vous-même.</p>
+    <?php else: ?>
+        <p style="color:red;">Action invalide.</p>
+    <?php endif; ?>
+<?php endif; ?>
+
+    <!-- Table des utilisateurs du site -->
     <table border="1" cellpadding="10">
         <tr>
             <th>ID</th>
